@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 
-export async function GET(_req:Request){
-    
+export async function GET(req:Request){
+    const {searchParams} = new URL(req.url);
+    const token = searchParams.get("token");
+    console.log("Token from search params:", token);
     try {
         const response=NextResponse.json({
             message:"Logout Successfully",
