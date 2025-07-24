@@ -26,9 +26,10 @@ export default function SignupPage() {
             }
 
             
-        } catch (error: any) {
+        } catch (error) {
             // Handle error (e.g., show a notification)
-            toast.error(error.response?.data?.error || "An error occurred during signup");
+            console.error("Error during signup:", error);
+            // toast.error(error.response?.data?.error || "An error occurred during signup");
         }finally {
             setLoading(false);
         }

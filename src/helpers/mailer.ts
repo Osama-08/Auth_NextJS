@@ -3,8 +3,8 @@ import User from '@/models/userModel';
 import bycrypt from 'bcryptjs';
 
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const sendEmail = async (email,emailType,userId:any) => {
+
+export const sendEmail = async (email,emailType,userId) => {
   try {
     const HasedToken=await bycrypt.hash(userId.toString(),10)
     if (emailType === 'verify') {

@@ -36,8 +36,9 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json({ message: "User created successfully" }, { status: 201 });
     }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    catch(error: any) {
+  
+    catch(error) {
+        console.error("Error in POST /api/users/signup:", error);
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
 }

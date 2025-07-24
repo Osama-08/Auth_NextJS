@@ -22,10 +22,10 @@ export default function LoginPage() {
                 // Handle successful login, e.g., redirect or show a success message
                 router.push("/profile");
             }
-        } catch (error: any) {
+        } catch (error) {
             // Handle error (e.g., show a notification)
             console.error("Login error:", error);
-            toast.error(error.response?.data?.error || "An error occurred during login");
+            // toast.error(error.response?.data?.error || "An error occurred during login");
         } finally {
             setLoading(false);
         }
