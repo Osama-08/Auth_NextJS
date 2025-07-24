@@ -22,6 +22,7 @@ connectToDatabase();
         
           return NextResponse.json({ message: 'Email verified successfully' }, { status: 200 });
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error:any) {
         console.error('Error in POST /api/users/verifyemail:', error);
         return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
