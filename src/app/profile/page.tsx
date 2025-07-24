@@ -15,10 +15,11 @@ export default function ProfilePage() {
       const response = await axios.get("/api/users/logout");
       toast.success("Logout Successfully");
       router.push("/login");
-    } catch (error: any) {
-      const message =
-        error?.response?.data?.error || "Something went wrong during logout";
-      toast.error(message);
+    } catch (error) {
+      console.error("Logout error:", error);
+      toast.error("Error in logout");
+      // Optionally, you can redirect to login page on error
+      router.push("/login");
     }
   };
   const [data, setUserData] = React.useState("nothing");
