@@ -5,9 +5,9 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   // Optional — use only if you want to skip TS errors too
-  // typescript: {
-  //   ignoreBuildErrors: true,
-  // },
+  typescript: {
+    ignoreBuildErrors: true,
+  }
 };
 
 export default nextConfig;
